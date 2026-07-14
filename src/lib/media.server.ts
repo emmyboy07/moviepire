@@ -273,7 +273,12 @@ export let lastApiTrace: string[] = [];
 export function addApiTrace(message: string): void {
   const timestamp = new Date().toISOString().substring(11, 19); // HH:MM:SS
   lastApiTrace.push(`[${timestamp}] ${message}`);
-  if (lastApiTrace.length > 30) {
+  // Was capped at 30 - too small for a full resolution trace once the
+  // website-fallback path is hit (each rejected candidate alone produces
+  // ~6 lines across 4 domains), which was silently evicting the earlier,
+  // more diagnostically important lines (e.g. the mobile-search outcome)
+  // before a caller ever got to read them.
+  if (lastApiTrace.length > 200) {
     lastApiTrace.shift();
   }
 }
