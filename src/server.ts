@@ -212,6 +212,41 @@ function vixSrcAllowedHosts(): string[] {
     .filter(Boolean);
 }
 
+// vixsrc.to 403s our deployment's own outbound IP on its /playlist/ and
+// segment endpoints specifically (confirmed: a plain fetch with the exact
+// same headers returns a 403 "Forbidden" HTML page instead of the m3u8) -
+// same class of per-IP block themoviebox.org/netfilm.world hit earlier, not
+// a token/session issue. Route these fetches through the same relay VPS
+// pool media-go-getter-main uses for MovieBox (cloudflare-worker/vps-proxy.js
+// and vps-proxy-lb.js on the Interserver VPS's) instead of a Cloudflare
+// Worker - reuses IP diversity/failover we already have, no new moving parts.
+const RELAY_PROXIES: { url: string; token: string }[] = [
+  { url: "http://162.35.176.37:8788/", token: "affe393e50a7ac66df6d7459216ce8d0c5796a2a9ad01f87" },
+  { url: "http://162.35.181.162:8788/", token: "affe393e50a7ac66df6d7459216ce8d0c5796a2a9ad01f87" },
+];
+let currentRelayIdx = 0;
+
+async function relayFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  let lastErr: unknown;
+  for (let i = 0; i < RELAY_PROXIES.length; i++) {
+    const idx = (currentRelayIdx + i) % RELAY_PROXIES.length;
+    const proxy = RELAY_PROXIES[idx];
+    const proxied = `${proxy.url}?url=${encodeURIComponent(url)}&token=${encodeURIComponent(proxy.token)}`;
+    try {
+      const res = await fetch(proxied, options);
+      if (res.status !== 502 && res.status !== 403 && res.status !== 429) {
+        currentRelayIdx = idx;
+        return res;
+      }
+      lastErr = new Error(`relay ${proxy.url} returned ${res.status}`);
+      if (i === RELAY_PROXIES.length - 1) return res;
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr instanceof Error ? lastErr : new Error("All relay proxies failed");
+}
+
 // Local streaming proxy: everything that used to go through the external
 // Cloudflare Workers (alphaproxy / stream-box-proxy) now proxies through this
 // server directly - /api/proxy-stream for Blaze mp4/HLS byte-streaming and
@@ -648,13 +683,20 @@ async function handleProxyRequest(request: Request): Promise<Response | null> {
       const range = request.headers.get("range");
       if (range) fetchHeaders["Range"] = range;
 
-      const upstream = await fetch(targetUrl, { headers: fetchHeaders, redirect: "follow" });
+      const upstream = await relayFetch(targetUrl, { headers: fetchHeaders, redirect: "follow" });
 
       const responseHeaders = new Headers({
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, OPTIONS",
         "Access-Control-Allow-Headers": "*",
       });
+
+      // Upstream errors (403/429/5xx block pages, etc.) must not be wrapped
+      // as if they were a valid manifest/segment - forward the real status so
+      // the player sees an actual HTTP error instead of an unparsable "200".
+      if (!upstream.ok) {
+        return new Response(await upstream.text(), { status: upstream.status, headers: responseHeaders });
+      }
 
       const contentType = upstream.headers.get("content-type") ?? "";
       const isM3u8 =
