@@ -627,27 +627,49 @@ async function getDownloadData(
   addApiTrace(`getDownloadData subjectId: "${subjectId}", se: ${season}, ep: ${episode}`);
 
   const fetchJson = async (label: string, url: string, referer: string): Promise<any | null> => {
-    try {
-      const res = await moviebox_fetch(url, { headers: getWeeedHeaders({ referer }) });
-      addApiTrace(`getDownloadData ${label} status: ${res.status}`);
-      const text = await res.text();
-      let json: any;
+    // netfilm.world's /subject/download geo-blocks our relay VPS's real IP
+    // (403 "invalid region") unless we spoof a Nigerian IP via
+    // X-Forwarded-For - but that spoofed IP (and every other one tried, on
+    // either relay VPS) now comes back 429 RESOURCE_EXHAUSTED, seemingly a
+    // rate limit tracked at the hosting provider/ASN level rather than per
+    // individual IP, since it doesn't matter which of the two relay VPS's or
+    // which spoofed value is used. A direct, unproxied request (this
+    // process's own real network) isn't subject to that block, so try that
+    // first and only fall back to the relay+spoof path if it fails.
+    const tryFetch = async (viaDirect: boolean): Promise<Response> => {
+      if (viaDirect) {
+        return fetch(url, { headers: getWeeedHeaders({ referer }) });
+      }
+      return moviebox_fetch(url, { headers: getWeeedHeaders({ referer }) });
+    };
+
+    for (const viaDirect of [true, false]) {
       try {
-        json = JSON.parse(text);
-      } catch (parseErr) {
-        await saveResponse(`getDownloadData ${label} - PARSE ERROR`, { url, referer, status: res.status, rawText: text.slice(0, 2000) }, "subject/download");
-        throw parseErr;
+        const res = await tryFetch(viaDirect);
+        addApiTrace(`getDownloadData ${label} status: ${res.status} (${viaDirect ? "direct" : "relay"})`);
+        const text = await res.text();
+        let json: any;
+        try {
+          json = JSON.parse(text);
+        } catch (parseErr) {
+          await saveResponse(`getDownloadData ${label} - PARSE ERROR`, { url, referer, status: res.status, rawText: text.slice(0, 2000) }, "subject/download");
+          if (viaDirect) continue; // try the relay path next
+          throw parseErr;
+        }
+        if (json?.code !== 0) {
+          addApiTrace(`getDownloadData ${label} non-zero code -> ${json?.code}: ${json?.message} (${viaDirect ? "direct" : "relay"})`);
+          if (viaDirect) continue; // try the relay path next
+          await saveResponse(`getDownloadData ${label}`, { url, referer, status: res.status, body: json }, "subject/download");
+          return null;
+        }
+        await saveResponse(`getDownloadData ${label}`, { url, referer, status: res.status, body: json }, "subject/download");
+        return json.data;
+      } catch (err: any) {
+        addApiTrace(`getDownloadData ${label} exception -> ${err.message || err} (${viaDirect ? "direct" : "relay"})`);
+        if (!viaDirect) return null;
       }
-      await saveResponse(`getDownloadData ${label}`, { url, referer, status: res.status, body: json }, "subject/download");
-      if (json?.code !== 0) {
-        addApiTrace(`getDownloadData ${label} non-zero code -> ${json?.code}: ${json?.message}`);
-        return null;
-      }
-      return json.data;
-    } catch (err: any) {
-      addApiTrace(`getDownloadData ${label} exception -> ${err.message || err}`);
-      return null;
     }
+    return null;
   };
 
   const fetchPlayJson = async (): Promise<any | null> => {
