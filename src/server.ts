@@ -37,15 +37,17 @@ if (!(globalThis as Record<string, unknown>)[CRASH_GUARD_KEY]) {
   });
 
   // Native Web API hooks crucial for Bun runtime stream error suppression
-  globalThis.addEventListener("unhandledrejection", (event) => {
-    event.preventDefault(); // Prevents Bun from terminating the process
-    console.error("[server] Bun unhandled rejection (suppressed):", event.reason);
-  });
+  if (typeof globalThis.addEventListener === "function") {
+    globalThis.addEventListener("unhandledrejection", (event) => {
+      event.preventDefault(); // Prevents Bun from terminating the process
+      console.error("[server] Bun unhandled rejection (suppressed):", event.reason);
+    });
 
-  globalThis.addEventListener("error", (event) => {
-    event.preventDefault(); // Prevents Bun from terminating the process
-    console.error("[server] Bun uncaught exception (suppressed):", event.error);
-  });
+    globalThis.addEventListener("error", (event) => {
+      event.preventDefault(); // Prevents Bun from terminating the process
+      console.error("[server] Bun uncaught exception (suppressed):", event.error);
+    });
+  }
 }
 
 // ── CDN smart-link (CSL) resolution ─────────────────────────────────────────
