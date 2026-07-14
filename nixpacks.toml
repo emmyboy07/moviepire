@@ -1,0 +1,6 @@
+# Nixpacks configuration to force Node/NPM build instead of Bun to prevent memory/segfault crashes
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "node .output/server/index.mjs"
