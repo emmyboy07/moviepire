@@ -887,6 +887,227 @@ async function searchAndResolveMovieBox(
   return resolveBestSubject(results, title, year, season);
 }
 
+// =============================================================================
+// Mobile-app search (api3/api6.aoneroom.com, HMAC-signed gateway) - a
+// completely separate backend/quota from the website mirrors
+// (moviebox.ph/.id/themoviebox.org/.ke, all fronting wefeed-h5api-bff) that
+// searchMovieBoxHtml/getSubjectDetail above hit. Its search results already
+// include subjectType + releaseDate per item, so candidate matching can
+// happen without a per-candidate /detail round-trip the way the website path
+// needs - only used for search/matching; actual resource/download links
+// still come from the website endpoints via getDownloadData below.
+// =============================================================================
+
+interface MobileSubjectResult {
+  subjectId: string;
+  subjectType: number;
+  title: string;
+  releaseDate: string;
+  detailPath: string;
+  matchScore: number;
+}
+
+const MOBILE_SEARCH_HOSTS = ["https://api6.aoneroom.com", "https://api3.aoneroom.com"];
+
+function extractDetailPathFromMobileUrl(detailUrl: string): string {
+  try {
+    const u = new URL(detailUrl);
+    const segments = u.pathname.split("/").filter(Boolean);
+    return segments[segments.length - 1] ?? "";
+  } catch {
+    return "";
+  }
+}
+
+async function mobileSearchMovieBox(keyword: string): Promise<MobileSubjectResult[]> {
+  if (!keyword) return [];
+  const cleanTarget = cleanTitle(keyword);
+  const cleanTargetStripped = cleanTitle(stripPossessivePrefix(keyword));
+  const body = JSON.stringify({ page: 1, perPage: 15, keyword });
+
+  for (const host of MOBILE_SEARCH_HOSTS) {
+    const url = `${host}/wefeed-mobile-bff/subject-api/search/v2`;
+    try {
+      const jwt = await getServerJwt();
+      const headers: Record<string, string> = {
+        ...bottomTabHeaders(),
+        authorization: jwt,
+        "content-type": "application/json; charset=utf-8",
+      };
+      delete headers.host;
+      headers["x-tr-signature"] = makeXTr("POST", url, headers, body);
+      headers["x-tr-signature-method"] = SIGN_METHOD;
+
+      const res = await fetch(url, { method: "POST", headers, body });
+      addApiTrace(`mobileSearchMovieBox (${host}) status: ${res.status}`);
+
+      if (res.status === 401 || res.status === 403) {
+        invalidateServerJwt();
+        continue;
+      }
+
+      const text = await res.text();
+      let json: any;
+      try {
+        json = JSON.parse(text);
+      } catch {
+        addApiTrace(`mobileSearchMovieBox (${host}) parse error`);
+        continue;
+      }
+      if (json?.code !== 0) {
+        addApiTrace(`mobileSearchMovieBox (${host}) non-zero code -> ${json?.code}: ${json?.message}`);
+        continue;
+      }
+
+      const results: MobileSubjectResult[] = [];
+      for (const group of json.data?.results ?? []) {
+        for (const s of group?.subjects ?? []) {
+          const title = String(s.title ?? "");
+          if (!title) continue;
+          const cleanCurrent = cleanTitle(title);
+          const matchesTarget = cleanCurrent.includes(cleanTarget) || cleanTarget.includes(cleanCurrent);
+          const matchesStripped =
+            cleanTargetStripped !== cleanTarget &&
+            (cleanCurrent.includes(cleanTargetStripped) || cleanTargetStripped.includes(cleanCurrent));
+          if (!matchesTarget && !matchesStripped) continue;
+
+          const detailPath = extractDetailPathFromMobileUrl(String(s.detailUrl ?? ""));
+          if (!detailPath) continue;
+
+          results.push({
+            subjectId: String(s.subjectId),
+            subjectType: Number(s.subjectType),
+            title,
+            releaseDate: String(s.releaseDate ?? ""),
+            detailPath,
+            matchScore: Math.max(
+              calculateMatchScore(cleanCurrent, cleanTarget),
+              matchesStripped ? calculateMatchScore(cleanCurrent, cleanTargetStripped) : 0,
+            ),
+          });
+        }
+      }
+      addApiTrace(`mobileSearchMovieBox (${host}) keyword "${keyword}" -> ${results.length} matched candidates`);
+      return results.sort((a, b) => b.matchScore - a.matchScore);
+    } catch (err: any) {
+      addApiTrace(`mobileSearchMovieBox (${host}) exception -> ${err.message || err}`);
+    }
+  }
+  return [];
+}
+
+// Same matching rules as resolveBestSubject, but sourced from mobile search
+// results (which already carry subjectType/releaseDate) instead of a
+// per-candidate website /detail fetch - the one exception is the "no season
+// suffix, season != 1" edge case, which still needs a single confirmatory
+// /detail call (website domain) since resource.seasons isn't in the mobile
+// search payload.
+async function resolveBestMobileSubject(
+  results: MobileSubjectResult[],
+  targetTitle: string,
+  targetYear?: string | null,
+  season?: number,
+): Promise<{ subjectId: string; detailPath: string; title: string } | null> {
+  const cleanTarget = cleanTitle(targetTitle);
+  const cleanTargetStripped = cleanTitle(stripPossessivePrefix(targetTitle));
+  const targetYearNum = targetYear ? parseInt(targetYear, 10) : NaN;
+  const candidates = results.slice(0, 5);
+  addApiTrace(`resolveBestMobileSubject: checking ${candidates.length} of ${results.length} candidates for "${targetTitle}" (${targetYear ?? "no year"})`);
+
+  let seasonOneAnchorConfirmed = false;
+  if (season != null && season !== 1 && !Number.isNaN(targetYearNum)) {
+    for (const candidate of candidates) {
+      const range = extractSeasonRange(candidate.title);
+      if (!range || !(1 >= range.start && 1 <= range.end)) continue;
+      const anchorYear = parseInt(candidate.releaseDate.split("-")[0], 10);
+      if (Number.isNaN(anchorYear)) continue;
+      const anchorBaseTitle = cleanTitle(candidate.title.replace(/\s*S\d+(?:-S\d+)?\s*$/i, ""));
+      const anchorIsExactTitle = anchorBaseTitle === cleanTarget || anchorBaseTitle === cleanTargetStripped;
+      const anchorTolerance = anchorIsExactTitle ? 2 : 0;
+      if (Math.abs(anchorYear - targetYearNum) <= anchorTolerance) {
+        seasonOneAnchorConfirmed = true;
+        addApiTrace(`resolveBestMobileSubject: season 1 anchor confirmed via "${candidate.title}" (${anchorYear})`);
+        break;
+      }
+    }
+  }
+
+  for (const candidate of candidates) {
+    if (season != null && candidate.subjectType !== 2) {
+      addApiTrace(`resolveBestMobileSubject: "${candidate.title}" rejected - subjectType ${candidate.subjectType} is not a TV series`);
+      continue;
+    }
+
+    const baseTitle = candidate.title.replace(/\s*S\d+(?:-S\d+)?\s*$/i, "");
+    const cleanBaseTitle = cleanTitle(baseTitle);
+    const isExactTitle = cleanBaseTitle === cleanTarget || cleanBaseTitle === cleanTargetStripped;
+
+    let seasonMatched = false;
+    if (season != null) {
+      const range = extractSeasonRange(candidate.title);
+      if (range) {
+        if (season >= range.start && season <= range.end) {
+          seasonMatched = true;
+        } else {
+          addApiTrace(`resolveBestMobileSubject: "${candidate.title}" rejected - season ${season} not in range S${range.start}-S${range.end}`);
+          continue;
+        }
+      } else if (season !== 1) {
+        const detail = await getSubjectDetail(candidate.detailPath, candidate.subjectId, season);
+        const seasonsAvailable = mapSeasonsResource(detail?.resource).seasons;
+        if (!seasonsAvailable.includes(season)) {
+          addApiTrace(`resolveBestMobileSubject: "${candidate.title}" rejected - resource seasons [${seasonsAvailable.join(",")}] don't cover season ${season}`);
+          continue;
+        }
+        seasonMatched = true;
+      }
+    }
+
+    const bypassYearCheck = seasonMatched && (season === 1 || seasonOneAnchorConfirmed);
+
+    if (!bypassYearCheck && !Number.isNaN(targetYearNum)) {
+      const itemYear = parseInt(candidate.releaseDate.split("-")[0], 10);
+      if (!Number.isNaN(itemYear)) {
+        const yearDiff = Math.abs(itemYear - targetYearNum);
+        const tolerance = isExactTitle ? 2 : 0;
+        if (yearDiff > tolerance) {
+          addApiTrace(`resolveBestMobileSubject: "${candidate.title}" rejected - year ${itemYear} vs target ${targetYearNum} (diff ${yearDiff} > tolerance ${tolerance})`);
+          continue;
+        }
+      }
+    }
+
+    addApiTrace(`resolveBestMobileSubject: accepted "${candidate.title}" (subjectId ${candidate.subjectId})`);
+    return { subjectId: candidate.subjectId, detailPath: candidate.detailPath, title: candidate.title };
+  }
+
+  addApiTrace(`resolveBestMobileSubject: no candidate passed - reporting not found`);
+  return null;
+}
+
+// Tries the mobile-app search/resolve path first (cheap, separate quota from
+// the website); falls back to the website HTML-scrape path if the mobile
+// gateway itself fails outright (not just "no match" - a genuine no-match
+// from mobile is trusted, since it already searched the same catalog).
+async function searchAndResolveMovieBoxHybrid(
+  title: string,
+  year: string | null,
+  season?: number,
+): Promise<{ subjectId: string; detailPath: string } | null> {
+  if (!title) return null;
+  const mobileResults = await mobileSearchMovieBox(title);
+  if (mobileResults.length) {
+    const resolved = await resolveBestMobileSubject(mobileResults, title, year, season);
+    if (resolved) return { subjectId: resolved.subjectId, detailPath: resolved.detailPath };
+    return null;
+  }
+  // Mobile gateway returned nothing at all (auth failure, network error, or
+  // a genuinely empty search) - fall back to the website path as a backstop.
+  addApiTrace(`searchAndResolveMovieBoxHybrid: mobile search empty for "${title}", falling back to website search`);
+  const fallback = await searchAndResolveMovieBox(title, year, season);
+  return fallback ? { subjectId: fallback.subjectId, detailPath: fallback.item.detailPath } : null;
+}
+
 export async function fetchMovieByTmdb(tmdbId: number): Promise<MediaResult | null> {
   const tmdb = await tmdbInfo("movie", tmdbId);
   if (!tmdb) return null;
@@ -902,18 +1123,17 @@ export async function fetchMovieByTmdb(tmdbId: number): Promise<MediaResult | nu
   // there as "Daha on Yedi", sharing no words with the English title) - if
   // searching TMDB's title finds nothing, retry with original_title before
   // giving up, since that's usually what MovieBox actually indexed it under.
-  let resolved = await searchAndResolveMovieBox(title, year);
+  let resolved = await searchAndResolveMovieBoxHybrid(title, year);
   if (!resolved && originalTitle && originalTitle !== title) {
     addApiTrace(`fetchMovieByTmdb: no match for "${title}", retrying with original_title "${originalTitle}"`);
-    resolved = await searchAndResolveMovieBox(originalTitle, year);
+    resolved = await searchAndResolveMovieBoxHybrid(originalTitle, year);
   }
   if (!resolved) return null;
 
   const core = await buildSubjectCore(
-    { subjectId: resolved.subjectId, detailPath: resolved.item.detailPath },
+    { subjectId: resolved.subjectId, detailPath: resolved.detailPath },
     undefined,
     undefined,
-    resolved.detail,
   );
   if (!core) return null;
 
@@ -947,18 +1167,17 @@ export async function fetchTvByTmdb(
   const year = (tmdb.first_air_date as string | undefined)?.split("-")[0] ?? null;
   // See fetchMovieByTmdb - same original-title fallback for shows MovieBox
   // only indexes under their native name.
-  let resolved = await searchAndResolveMovieBox(title, year, season);
+  let resolved = await searchAndResolveMovieBoxHybrid(title, year, season);
   if (!resolved && originalTitle && originalTitle !== title) {
     addApiTrace(`fetchTvByTmdb: no match for "${title}", retrying with original_name "${originalTitle}"`);
-    resolved = await searchAndResolveMovieBox(originalTitle, year, season);
+    resolved = await searchAndResolveMovieBoxHybrid(originalTitle, year, season);
   }
   if (!resolved) return null;
 
   const core = await buildSubjectCore(
-    { subjectId: resolved.subjectId, detailPath: resolved.item.detailPath },
+    { subjectId: resolved.subjectId, detailPath: resolved.detailPath },
     season,
     episode,
-    resolved.detail,
   );
   if (!core) return null;
 
