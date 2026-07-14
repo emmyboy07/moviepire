@@ -223,21 +223,40 @@ const MOVIEBOX_PROXIES: { url: string; token: string }[] = [
 ];
 let currentProxyIdx = 0;
 
+// netfilm.world's region check just needs a plausible allowed-region IP in
+// these headers - it doesn't care WHICH one. But its separate daily download
+// quota (LIMIT_EXCEED "Too many downloads. Try tomorrow.") is tracked by
+// this exact header value, not by our real IP or any cookie/account
+// identity (confirmed: same real IP + same account, only the spoofed IP
+// changed, flips the outcome) - hardcoding one literal value here meant
+// every request all day looked like the same single "user" to netfilm.world,
+// which inevitably hit its own daily cap. Generate a fresh one per call so
+// no single fake identity ever accumulates enough volume to get capped.
+function randomAllowedRegionIp(): string {
+  const octet = () => 1 + Math.floor(Math.random() * 254);
+  // 105.112.x.x / 41.203.x.x / 197.210.x.x are real African ISP ranges we've
+  // confirmed pass the region check - pick among them rather than a single one.
+  const bases = ["105.112", "41.203", "197.210", "102.89"];
+  const base = bases[Math.floor(Math.random() * bases.length)];
+  return `${base}.${octet()}.${octet()}`;
+}
+
 async function moviebox_fetch(url: string, options: RequestInit = {}): Promise<Response> {
   if (url.includes("netfilm.world")) {
+    const spoofIp = randomAllowedRegionIp();
     if (options.headers instanceof Headers) {
-      options.headers.set("X-Forwarded-For", "105.112.34.201");
-      options.headers.set("X-Real-IP", "105.112.34.201");
-      options.headers.set("CF-Connecting-IP", "105.112.34.201");
-      options.headers.set("True-Client-IP", "105.112.34.201");
+      options.headers.set("X-Forwarded-For", spoofIp);
+      options.headers.set("X-Real-IP", spoofIp);
+      options.headers.set("CF-Connecting-IP", spoofIp);
+      options.headers.set("True-Client-IP", spoofIp);
     } else {
       const rawHeaders = (options.headers || {}) as Record<string, string>;
       options.headers = {
         ...rawHeaders,
-        "X-Forwarded-For": "105.112.34.201",
-        "X-Real-IP": "105.112.34.201",
-        "CF-Connecting-IP": "105.112.34.201",
-        "True-Client-IP": "105.112.34.201",
+        "X-Forwarded-For": spoofIp,
+        "X-Real-IP": spoofIp,
+        "CF-Connecting-IP": spoofIp,
+        "True-Client-IP": spoofIp,
       };
     }
   }
@@ -632,15 +651,16 @@ async function getDownloadData(
   addApiTrace(`getDownloadData subjectId: "${subjectId}", se: ${season}, ep: ${episode}`);
 
   const fetchJson = async (label: string, url: string, referer: string): Promise<any | null> => {
-    // netfilm.world's /subject/download geo-blocks our relay VPS's real IP
-    // (403 "invalid region") unless we spoof a Nigerian IP via
-    // X-Forwarded-For - but that spoofed IP (and every other one tried, on
-    // either relay VPS) now comes back 429 RESOURCE_EXHAUSTED, seemingly a
-    // rate limit tracked at the hosting provider/ASN level rather than per
-    // individual IP, since it doesn't matter which of the two relay VPS's or
-    // which spoofed value is used. A direct, unproxied request (this
-    // process's own real network) isn't subject to that block, so try that
-    // first and only fall back to the relay+spoof path if it fails.
+    // netfilm.world's /subject/download geo-blocks our real IP (403 "invalid
+    // region") unless X-Forwarded-For claims an allowed-region IP - and
+    // separately enforces its own daily download quota (LIMIT_EXCEED "Too
+    // many downloads. Try tomorrow.") keyed by THAT SAME spoofed value, not
+    // by our real IP or any account/cookie identity (confirmed directly:
+    // randomizing the account while reusing one fixed spoofed IP still hit
+    // the cap; switching only the spoofed IP immediately cleared it). A
+    // fresh, randomized allowed-region IP is generated per call (see
+    // randomAllowedRegionIp above) so no single fake identity ever
+    // accumulates enough volume to get capped.
     const tryFetch = async (viaDirect: boolean): Promise<Response> => {
       if (viaDirect) {
         // Spoof the same allowed-region IP the relay path uses (see
@@ -648,13 +668,14 @@ async function getDownloadData(
         // doesn't hurt when our real IP is already in an allowed region, and
         // unblocks it when it isn't (e.g. this deployment's own VPS, as
         // opposed to wherever a given dev/test run happens to execute from).
+        const spoofIp = randomAllowedRegionIp();
         return fetch(url, {
           headers: {
             ...getWeeedHeaders({ referer }),
-            "X-Forwarded-For": "105.112.34.201",
-            "X-Real-IP": "105.112.34.201",
-            "CF-Connecting-IP": "105.112.34.201",
-            "True-Client-IP": "105.112.34.201",
+            "X-Forwarded-For": spoofIp,
+            "X-Real-IP": spoofIp,
+            "CF-Connecting-IP": spoofIp,
+            "True-Client-IP": spoofIp,
           },
         });
       }
