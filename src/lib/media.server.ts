@@ -871,21 +871,42 @@ async function buildSubjectCore(
   };
 }
 
+// Runs the search -> extract -> resolve chain for a single title string.
+// Shared so callers can retry with a different title (e.g. original_title)
+// without duplicating the three-step pipeline.
+async function searchAndResolveMovieBox(
+  title: string,
+  year: string | null,
+  season?: number,
+): Promise<{ item: HtmlSearchResult; detail: any; subjectId: string } | null> {
+  if (!title) return null;
+  const html = await searchMovieBoxHtml(title);
+  if (!html) return null;
+  const results = extractMovieBoxResults(html, title);
+  if (!results.length) return null;
+  return resolveBestSubject(results, title, year, season);
+}
+
 export async function fetchMovieByTmdb(tmdbId: number): Promise<MediaResult | null> {
   const tmdb = await tmdbInfo("movie", tmdbId);
   if (!tmdb) return null;
 
   const title = tmdb.title ?? "";
+  const originalTitle = tmdb.original_title ?? "";
   const year = (tmdb.release_date as string | undefined)?.split("-")[0] ?? null;
   // Search by title alone - disambiguation happens later via each candidate's
   // real releaseDate (see resolveBestSubject), so the year isn't needed here.
-  const html = await searchMovieBoxHtml(title);
-  if (!html) return null;
-
-  const results = extractMovieBoxResults(html, title);
-  if (!results.length) return null;
-
-  const resolved = await resolveBestSubject(results, title, year);
+  //
+  // Non-English-original films are often listed on MovieBox under their
+  // native title only (e.g. a Turkish film "Torn Apart" on TMDB is indexed
+  // there as "Daha on Yedi", sharing no words with the English title) - if
+  // searching TMDB's title finds nothing, retry with original_title before
+  // giving up, since that's usually what MovieBox actually indexed it under.
+  let resolved = await searchAndResolveMovieBox(title, year);
+  if (!resolved && originalTitle && originalTitle !== title) {
+    addApiTrace(`fetchMovieByTmdb: no match for "${title}", retrying with original_title "${originalTitle}"`);
+    resolved = await searchAndResolveMovieBox(originalTitle, year);
+  }
   if (!resolved) return null;
 
   const core = await buildSubjectCore(
@@ -922,14 +943,15 @@ export async function fetchTvByTmdb(
   if (!tmdb) return null;
 
   const title = tmdb.name ?? "";
+  const originalTitle = tmdb.original_name ?? "";
   const year = (tmdb.first_air_date as string | undefined)?.split("-")[0] ?? null;
-  const html = await searchMovieBoxHtml(title);
-  if (!html) return null;
-
-  const results = extractMovieBoxResults(html, title);
-  if (!results.length) return null;
-
-  const resolved = await resolveBestSubject(results, title, year, season);
+  // See fetchMovieByTmdb - same original-title fallback for shows MovieBox
+  // only indexes under their native name.
+  let resolved = await searchAndResolveMovieBox(title, year, season);
+  if (!resolved && originalTitle && originalTitle !== title) {
+    addApiTrace(`fetchTvByTmdb: no match for "${title}", retrying with original_name "${originalTitle}"`);
+    resolved = await searchAndResolveMovieBox(originalTitle, year, season);
+  }
   if (!resolved) return null;
 
   const core = await buildSubjectCore(
