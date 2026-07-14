@@ -638,7 +638,20 @@ async function getDownloadData(
     // first and only fall back to the relay+spoof path if it fails.
     const tryFetch = async (viaDirect: boolean): Promise<Response> => {
       if (viaDirect) {
-        return fetch(url, { headers: getWeeedHeaders({ referer }) });
+        // Spoof the same allowed-region IP the relay path uses (see
+        // moviebox_fetch below) even on this direct, unproxied attempt -
+        // doesn't hurt when our real IP is already in an allowed region, and
+        // unblocks it when it isn't (e.g. this deployment's own VPS, as
+        // opposed to wherever a given dev/test run happens to execute from).
+        return fetch(url, {
+          headers: {
+            ...getWeeedHeaders({ referer }),
+            "X-Forwarded-For": "105.112.34.201",
+            "X-Real-IP": "105.112.34.201",
+            "CF-Connecting-IP": "105.112.34.201",
+            "True-Client-IP": "105.112.34.201",
+          },
+        });
       }
       return moviebox_fetch(url, { headers: getWeeedHeaders({ referer }) });
     };
