@@ -219,6 +219,13 @@ function vixSrcAllowedHosts(): string[] {
 // fetch() (no Froxy) unless USE_FROXY is explicitly turned on.
 async function handleProxyRequest(request: Request): Promise<Response | null> {
   const url = new URL(request.url);
+  // Behind the reverse proxy, request.url (and thus url.origin) reports the
+  // internal plain-HTTP scheme even though the public site is HTTPS-only -
+  // building rewritten manifest URLs from url.origin directly produces
+  // http:// links that browsers silently block as mixed content on the
+  // https:// page, breaking every rendition/segment the manifest points to.
+  const isPublicHttps = request.headers.get("x-forwarded-proto") === "https" || url.protocol === "https:";
+  const publicOrigin = `${isPublicHttps ? "https" : "http"}://${url.host}`;
 
   if (!url.pathname.startsWith("/api/proxy") && url.pathname !== "/api/hls-proxy") {
     return null;
@@ -519,7 +526,7 @@ async function handleProxyRequest(request: Request): Promise<Response | null> {
         const refererSuffix = refererParam
           ? `&referer=${encodeURIComponent(refererParam)}`
           : "";
-        const proxyBase = `${url.origin}/api/proxy-stream?url=`;
+        const proxyBase = `${publicOrigin}/api/proxy-stream?url=`;
 
         const rewritten = text
           .split("\n")
@@ -673,7 +680,7 @@ async function handleProxyRequest(request: Request): Promise<Response | null> {
       if (isM3u8) {
         const text = await upstream.text();
         const baseUrl = parsedTarget;
-        const proxyBase = `${url.origin}/api/hls-proxy`;
+        const proxyBase = `${publicOrigin}/api/hls-proxy`;
         // Reuse the same sig+exp for all URLs rewritten in this manifest
         const sessionParams = `&ref=${encodeURIComponent(referer)}&exp=${exp}&sig=${encodeURIComponent(sig)}`;
 
