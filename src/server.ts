@@ -577,6 +577,24 @@ async function handleProxyRequest(request: Request): Promise<Response | null> {
         responseHeaders.set("Content-Disposition", buildContentDisposition(safeFilename));
       }
 
+      // Cloudflare (and similar CDNs/proxies in front of the deployed origin)
+      // auto-compresses responses whenever the client's Accept-Encoding allows
+      // it, regardless of content-type - re-compressing an already-compressed
+      // MP4 achieves nothing but switches the response to
+      // Transfer-Encoding: chunked and DROPS Content-Length/Accept-Ranges
+      // entirely (confirmed directly against media-go-getter-main's identical
+      // proxy: a browser-like Accept-Encoding got Content-Encoding: zstd with
+      // no Content-Length at all, vs. a correct response without it). Every
+      // real browser download hit this - only plain curl requests (which
+      // don't request compression by default) looked fine. no-transform is
+      // the standard signal telling any compliant intermediary not to alter
+      // the response's encoding.
+      const existingCacheControl = responseHeaders.get("cache-control");
+      responseHeaders.set(
+        "Cache-Control",
+        existingCacheControl ? `${existingCacheControl}, no-transform` : "no-transform",
+      );
+
       return new Response(response.body, {
         status: response.status,
         headers: responseHeaders,
