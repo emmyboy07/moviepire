@@ -1289,23 +1289,21 @@ export async function fetchAnimeByAnilist(anilistId: number, episode: number): P
   if (!animeMeta) return null;
 
   const title = animeMeta.title.english || animeMeta.title.romaji || animeMeta.title.native || "";
+  const altTitle = animeMeta.title.romaji || animeMeta.title.native || "";
   const year = animeMeta.seasonYear ? String(animeMeta.seasonYear) : null;
 
-  const html = await searchMovieBoxHtml(title);
-  if (!html) return null;
-
-  const results = extractMovieBoxResults(html, title);
-  if (!results.length) return null;
-
   // AniList IDs represent a single season (season 1) in MovieBox's catalog
-  const resolved = await resolveBestSubject(results, title, year, 1);
+  let resolved = await searchAndResolveMovieBoxHybrid(title, year, 1);
+  if (!resolved && altTitle && altTitle !== title) {
+    addApiTrace(`fetchAnimeByAnilist: no match for "${title}", retrying with "${altTitle}"`);
+    resolved = await searchAndResolveMovieBoxHybrid(altTitle, year, 1);
+  }
   if (!resolved) return null;
 
   const core = await buildSubjectCore(
-    { subjectId: resolved.subjectId, detailPath: resolved.item.detailPath },
+    { subjectId: resolved.subjectId, detailPath: resolved.detailPath },
     1,
     episode,
-    resolved.detail,
   );
   if (!core) return null;
 
