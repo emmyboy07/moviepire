@@ -10130,3 +10130,1359 @@
     }
   }
 }
+
+========== [2026-07-14T16:33:19.323Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=320e7eeb40d7704ac531ee169880f825&t=1784044072",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkwT0RVeE0zMTlmVjE5XHUwMDI2U2lnbmF0dXJlPUNmcmU3dkhxVGRPQ1Bzak9ScjE0WlZ6dllKVGtwRUU2c2Y4Nn40bXE5LUFpUVdabHN5a1h6WmxXOUpKdGpkbWZIVXVSM3NicXZWRnZEWDN1b0ZTdEt3eXY5emY1TjVSTVNrUlRIRjBjUDIydWxlZzh6N2NzNGhEU0ZoUjFUTjZ0bWRjU0c5dTk0eXhyTmhFNmVyWmh2cXg2cEg4em0tVVhDb2FoRWpJbHVQUnItOH5TRlFZd3ltLWlpM1N6b2hFeHBUSlJZeHJaTTlDZXlCeTYtVTFiQmktUEhLZXRWb2tXTHN%2BSkVUVFBhZ250bVNCZzk5V0I2SDB3T0FabFRxcjIzMEdjRE5oYmt5Qi04bnhGOUxXTFNOclhrMGtGUEVvblpIRGM0VW4yZ2Nzc00zQU5scktaUVQ4SzdLd2llQ1ZrcW0takhKZHl0NTluaXhZUjRuRFdJQV9fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA0NjgwMH0%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T16:33:19.580Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "downloads": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=cc1ec0ad90025237beff46bc6484ee61&t=1784046524",
+          "resolution": 360,
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264"
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "https://bcdnxw.hakunaymatata.com/extto/502dd75dda9962b0dc59b641065c9a92.mp4?sign=ba1ea6ae510f6b2474fe141e2c2e86ef&t=1784044214",
+          "resolution": 1080,
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264"
+        }
+      ],
+      "captions": [
+        {
+          "id": "5666694390157296544",
+          "lan": "ar",
+          "lanName": "اَلْعَرَبِيَّةُ",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b37e8a07507231cc6176ee1013261639.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "132530",
+          "delay": 0
+        },
+        {
+          "id": "7740912222574445344",
+          "lan": "bn",
+          "lanName": "বাংলা",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d764acb4394163f94e8f35e54d824479.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "216663",
+          "delay": 0
+        },
+        {
+          "id": "3215301258789672032",
+          "lan": "en",
+          "lanName": "English",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/66d3c802c8e0d888bc9f00226039d49c.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131595",
+          "delay": 0
+        },
+        {
+          "id": "3528277641457452944",
+          "lan": "fil",
+          "lanName": "Filipino",
+          "url": "https://cacdn.hakunaymatata.com/msubt/8b71a95546338315c8642e60260c9d39.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "183256",
+          "delay": 0
+        },
+        {
+          "id": "5018176043816027704",
+          "lan": "fr",
+          "lanName": "Français",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/9fe8f1a65a580e5ed98e8aa30411ba86.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "135808",
+          "delay": 0
+        },
+        {
+          "id": "5389239018578134568",
+          "lan": "ha",
+          "lanName": "هَرْشٜن هَوْس",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/280054f796d647ca03562fe51564309d.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171418",
+          "delay": 0
+        },
+        {
+          "id": "6945533881395594352",
+          "lan": "in_id",
+          "lanName": "Indonesian",
+          "url": "https://cacdn.hakunaymatata.com/ai_translate/f78c495ae66a2d64a8a6df5eeeb46028.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9haV90cmFuc2xhdGUvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4NDY1MTA3M319fV19&Signature=4MkXH1FakSutPlPlnCJOcbwiemlXOsrsJtwSQN1M3nslrLOV3I2W62upoCaAUEZXh2ax6~m2~xf35ROkdw1SUtGzzXvnOVpKAl61rIqQOD1BClHVmic0r03phILXs-UcdT9H9vp~lm64BnB6YsCPIJ1yjRr0PiWoSN83mZo8z~MU7cA5EhSR0YN02VJfdzDzapLEMtnb4EsxYdKVuP0vdYi7sZ3c7dB-xKDYyd7FFq890iVtGczbsQBWMdYm07MwQcR7KW3bCToTTONNpgggX0aPqTqkPQwpcm717HsaD-Uqckco-0IgM0HsdqGMor46QEgocz0GhlV5vGKNx~VJsg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "129549",
+          "delay": 0
+        },
+        {
+          "id": "2836683592246482920",
+          "lan": "ms",
+          "lanName": "Malay",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bab0cc4977090fb12762e1f29a2e02f8.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "138880",
+          "delay": 0
+        },
+        {
+          "id": "3133857639181025576",
+          "lan": "pa",
+          "lanName": "ਪੰਜਾਬੀ",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bf083f156efdb0937dcdea90499d5052.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "220435",
+          "delay": 0
+        },
+        {
+          "id": "6747558300726296944",
+          "lan": "pt",
+          "lanName": "Português",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/d991584fe4ff908da78f4de4a253bf6b.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131119",
+          "delay": 0
+        },
+        {
+          "id": "1259256284520540440",
+          "lan": "ru",
+          "lanName": "Русский",
+          "url": "https://cacdn.hakunaymatata.com/msubt/4142c1402a0c106291beef4d98e5576a.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "162172",
+          "delay": 0
+        },
+        {
+          "id": "4671266721733429424",
+          "lan": "sw",
+          "lanName": "Kiswahili",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b686d79d1c23def2301a2995adceebd4.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=5l4TQ8cx9KGovzLDZR7J8HlPGp1omaMGToj3dCpRhC1OSSFXo-PCJ-S~sIi0-rsb6CWCGQUt5R91Oi2lX0wsJE4G1AvOLb-2fmiLzIf6klBi5F~7Pcn-oS87-m3lotEB-90SP0Hc5CmZ-pdUkuWDD8UXee87DrvVini2STch2iuJdvaTNptRZkAwEZiiNRPzN6aPzviPI2ELt02ki0l2zw1wr21aecBu~~H~kt~rUMULr-ASTThsbm14dk8AF1LHBkbiJEBU9esv9p-WNDi7ASA9b~P6u-tR4GsA0FtTxBeC90m7dE2hwFWWkFaFRVal9zCQVi2Ko6m9mck~aoyhcg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171770",
+          "delay": 0
+        },
+        {
+          "id": "7663434242370011392",
+          "lan": "ur",
+          "lanName": "اُردُو",
+          "url": "https://cacdn.hakunaymatata.com/msubt/18bcc594976e2eb39d94892e7e76a180.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "175806",
+          "delay": 0
+        },
+        {
+          "id": "4049535827645530176",
+          "lan": "zh",
+          "lanName": "中文",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d36ad807eec8b17548d33b679befed09.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ4NzMyfX19XX0_&Signature=e5xnJxdGqxY9vRXuJ-kX2Q6bmKxKOUUiWLP6SZJiPcJi4VdRRhvutwjdYEmKbUoL4xDL66p1yHhdnSZNFboa3nFDQ27W9sSXrlXyhq2LPNyzgQ0yJwoIGuKnDvAR~-zJNhdQxKxeU2PuaL308M0IxxA9bijGxmQr7SR6YCM9qzLOQ3JwI0yVdMik4IsjAG6mR0Iav4UHFKkybWrjb1NyG6t1n3k2y2LvT7vS5-R0WQCeJ2scKTdHzA8xegaKw2gh9lC3uhYBU1YBtbFJoT3fqyAF-86RzAVn35DEX6i7AlRzdwe21hEcW-9sBihSVAUk6Doe7Lt9H2VFlO0B~GJmfQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "128807",
+          "delay": 0
+        }
+      ],
+      "limited": false,
+      "limitedCode": "",
+      "freeNum": 999,
+      "hasResource": true
+    }
+  }
+}
+
+========== [2026-07-14T16:37:11.434Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "downloads": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=320e7eeb40d7704ac531ee169880f825&t=1784044072",
+          "resolution": 360,
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264"
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "https://bcdnxw.hakunaymatata.com/extto/502dd75dda9962b0dc59b641065c9a92.mp4?sign=3b70b7e16b56ccf3b0bb6abcef06259b&t=1784046646",
+          "resolution": 1080,
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264"
+        }
+      ],
+      "captions": [
+        {
+          "id": "5666694390157296544",
+          "lan": "ar",
+          "lanName": "اَلْعَرَبِيَّةُ",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b37e8a07507231cc6176ee1013261639.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "132530",
+          "delay": 0
+        },
+        {
+          "id": "7740912222574445344",
+          "lan": "bn",
+          "lanName": "বাংলা",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d764acb4394163f94e8f35e54d824479.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "216663",
+          "delay": 0
+        },
+        {
+          "id": "3215301258789672032",
+          "lan": "en",
+          "lanName": "English",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/66d3c802c8e0d888bc9f00226039d49c.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131595",
+          "delay": 0
+        },
+        {
+          "id": "3528277641457452944",
+          "lan": "fil",
+          "lanName": "Filipino",
+          "url": "https://cacdn.hakunaymatata.com/msubt/8b71a95546338315c8642e60260c9d39.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "183256",
+          "delay": 0
+        },
+        {
+          "id": "5018176043816027704",
+          "lan": "fr",
+          "lanName": "Français",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/9fe8f1a65a580e5ed98e8aa30411ba86.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "135808",
+          "delay": 0
+        },
+        {
+          "id": "5389239018578134568",
+          "lan": "ha",
+          "lanName": "هَرْشٜن هَوْس",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/280054f796d647ca03562fe51564309d.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171418",
+          "delay": 0
+        },
+        {
+          "id": "6945533881395594352",
+          "lan": "in_id",
+          "lanName": "Indonesian",
+          "url": "https://cacdn.hakunaymatata.com/ai_translate/f78c495ae66a2d64a8a6df5eeeb46028.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9haV90cmFuc2xhdGUvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4NDY0OTA3Mn19fV19&Signature=t0kjnkFoOC-qfSkwLlue3dh8eOwWVNv30gO0uke-ByP0Rb16maAin~FHKkiC-v-dE6I0j3LmRT6ZaKdXKoRJuQWAsx249ryX7dL-DmBlra5fYJ14o39Jyqtrcdt41oAYKTBKOwNAOXWHrbq9~ealcWfc~NvliYNDBX8zZr3g80PkeJdQJ1oI29C3Aca7F3IC4t~Z1J-eWm2~5cylsMmUoDJcm~l5G-v9GPJQZsd5XE~HS5aW7mgPS5vzZjoMkR-n-UDMkA25rbSwFJ7mWurEUhuuufwF0zN~6dRH7oLfdJFv2WLLRQUZt~LagrUO98GUiN4XuoZ5r3ze6xHfLLeXiQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "129549",
+          "delay": 0
+        },
+        {
+          "id": "2836683592246482920",
+          "lan": "ms",
+          "lanName": "Malay",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bab0cc4977090fb12762e1f29a2e02f8.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "138880",
+          "delay": 0
+        },
+        {
+          "id": "3133857639181025576",
+          "lan": "pa",
+          "lanName": "ਪੰਜਾਬੀ",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bf083f156efdb0937dcdea90499d5052.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "220435",
+          "delay": 0
+        },
+        {
+          "id": "6747558300726296944",
+          "lan": "pt",
+          "lanName": "Português",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/d991584fe4ff908da78f4de4a253bf6b.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131119",
+          "delay": 0
+        },
+        {
+          "id": "1259256284520540440",
+          "lan": "ru",
+          "lanName": "Русский",
+          "url": "https://cacdn.hakunaymatata.com/msubt/4142c1402a0c106291beef4d98e5576a.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "162172",
+          "delay": 0
+        },
+        {
+          "id": "4671266721733429424",
+          "lan": "sw",
+          "lanName": "Kiswahili",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b686d79d1c23def2301a2995adceebd4.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=JsuFQrIQwX4thPOZqsDBwMlPR8TYa0bjj77kEduqWAnf8xnOAf-lvwvwEUaT0GhAukFpSpP1YDEDzvBH2qUvseSEA1WLA5~qWds2kO87TW9Fr~wwFk9DLkGsPGT1oufXZV-XZgQWvvtQQWPU2Z5iLQ29vBLATZtSXwkWBlR84Q~QXHfSGGrXvzShlsSB2A0N5zsa8933QYeBWsumXbP4RXo4N4k5QRBRCToOp-hAuU5qJNTvqcX5WAhFv8oMsqb-QnlNM66Au0G~l8xVLebmfo5JGsQAVK0RIWzcvtVO-AVxsr~UJ49i0Ky4zMHu58Q1uZm4HtxwNb9jG5q-Cnboyw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171770",
+          "delay": 0
+        },
+        {
+          "id": "7663434242370011392",
+          "lan": "ur",
+          "lanName": "اُردُو",
+          "url": "https://cacdn.hakunaymatata.com/msubt/18bcc594976e2eb39d94892e7e76a180.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "175806",
+          "delay": 0
+        },
+        {
+          "id": "4049535827645530176",
+          "lan": "zh",
+          "lanName": "中文",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d36ad807eec8b17548d33b679befed09.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0NjQ5MDYxfX19XX0_&Signature=1LdpP0-O5Yzh29Ira305U-e8Cpu~kytNDEsQdTK1YNJ~8t0Ft2cp3Uzvz7sAA9HyITWk5njg77gtvYiq0Z0NbsWTBXFV4p8op3bl9kNIm3TODD-38TlZi5AdB-ELQ7YksButYowI0BN5JpDxRV1EMMdMshIX4u-27qiHW2J4mevMAwiQqGPmBU2PGJX7kFEo9SYC92mXidpVCBxOWtOZmaRR1m1W6yttBz2~Xp8A4-iZ9kWIrXCM27PQ0rKhlGI8J80wscd2wvP-p0MGzOw8rIuDCEgKaYd2oRKFUCWnHkD4ElcDW4WQhdclTPKxsBS8Yc4JhqOgDpZXaQhMKC4qvA__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "128807",
+          "delay": 0
+        }
+      ],
+      "limited": false,
+      "limitedCode": "",
+      "freeNum": 999,
+      "hasResource": true
+    }
+  }
+}
+
+========== [2026-07-14T16:37:11.737Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=76892e7ec21193b301deae9fe4aa4495&t=1784046520",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkwT1RnNU5YMTlmVjE5XHUwMDI2U2lnbmF0dXJlPVBUeEhWcDdaYmYwT3dud1puUHJLTktwdUxMVlB2ZUVITjRRZXRYb2x%2BdkR5MUg3UmdPY1p0ZWxPRWhhTHBWbUgwTGN0SGQ0RktmN0x4aX5XbEhDd0I4WTRMSjVSbi1WS0pTa2RnWlpuTmFkZFdrbDE5Un44bERObnJzfkxYTmtDYmhDWGxOdTg0T2I2VVZPbGNVQzF6WFk5UjlXWTVybWZOOWkyNjk2OVB0Q0ltanlUcDlES3RHTHExTFFTM1FRWXNlbk42RmMyVkxPWE9aTTVyTkg3Wmc0VHR%2BVkZyRHhVaWNJUmd0UGdYVn5Gd3M3MWFNNnZaNTZiVU5wV3RhbS13b3B5b3Q4ZGwyVWFOMUdkRzFCZ1k0RDcwLWVGbXh6ejltRGw2cjRSTk5RSDZaTjdKflFzQzdOan4tM0phOH50RHlZeC13eHJ4VG81NTk0dH5SalBCZ19fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA0NzAzM30%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:12:24.430Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=781df39ac542bfca56fa27ac33a7e4c9&t=1784070158",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTXpBM01YMTlmVjE5XHUwMDI2U2lnbmF0dXJlPXJ1dkFaQkR2aks5WVBaMlRMZ2pwazNvZFV5VkxQeGNZVVQ5Y0NXN3lteEo5NlVVdEw1MXpSOEU1emJXUmd2bENmeUtvZEFpNnIyNzVtUENaQzFqbEl%2BdHFSclZRVENiS1dBNVJPcHF2czBSZW11U0ZmWXl0Z09tZk5tVjZhMlNuMzNnUzM3aUw3Umhub2RQMGowQX4wMmVmNkFMbEJhTjBPZG05eWlIMVBHeFdzMU1wSUxrdzNyZUp1fk1tbVZLNldOaFpnQU43ZFB3Y2hGS2k2ZmhiWi1iTUlHZEV3TS1ycERvSkdHdFFtSjBIYmV2VzFPQXA0NzhNYVdMNTBESHNUNEZ0R35nM25tRHdnSEJzRW4xM1JiWU9VWjgtQXM4U0E4MEpiflctY0dTLXh1d2txOXFHNW1Bc3NxS2pjfmxtT1hmRlJNR0JNU2d6dng0a2RybXpOd19fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3MDc0NX0%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:12:26.031Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:21:01.243Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "5807291619376252664",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/138588ed3e0483aaa3e16a08cb5e233d.mp4?sign=11380a56b8f410c75adb2ba4a4cb29a1&t=1784068716",
+          "resolutions": "360",
+          "size": "97706114",
+          "duration": 5447,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "3789678986314269536",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/99b91e3637cf9b8a07bb27ac7ca306c8.mp4?sign=71b216d5afea13204d24a247e21dd7dd&t=1784068716",
+          "resolutions": "480",
+          "size": "164224665",
+          "duration": 5447,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "5122744476016040440",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/6b198867fbd691658fb7f6866c6e9ec1.mp4?sign=4e84a140aa77d896df90f4861ea4ebdb&t=1784068716",
+          "resolutions": "720",
+          "size": "324733084",
+          "duration": 5447,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": false
+    }
+  }
+}
+
+========== [2026-07-14T23:21:02.735Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3257954112465424160&se=0&ep=0&detailPath=the-hunchback-of-notre-dame-MOTRo9NsFS3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/the-hunchback-of-notre-dame-MOTRo9NsFS3?id=3257954112465424160&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:22:35.280Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7459950588408090656",
+          "url": "https://bcdnxw.hakunaymatata.com/convert-h264/f51e9dc3bec3d33d412b5bb2aa2d18c4.mp4?sign=8ad9ae54581de43558814fdb7cf069e5&t=1784068983",
+          "resolutions": "360",
+          "size": "416009690",
+          "duration": 6238,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "4263544888987451448",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/e244ffd9cd5a9f4a4fbd14f46fbb81df.mp4?sign=f2624a4bff5e7b86d6fcd5561b115526&t=1784071356",
+          "resolutions": "480",
+          "size": "390156305",
+          "duration": 6238,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "336406013920313288",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/f99584b7958970a61ca53ffa0b87b780.mp4?sign=47e1ba7158c90f0971a3d61ab7d34948&t=1784067464",
+          "resolutions": "720",
+          "size": "1118376990",
+          "duration": 6238,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "1046793630448505528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "1839564622",
+          "duration": 6238,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:22:36.542Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=4515884792910595112&se=0&ep=0&detailPath=transporter-3-GxooKcCNAn5",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/transporter-3-GxooKcCNAn5?id=4515884792910595112&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:25:01.181Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=781df39ac542bfca56fa27ac33a7e4c9&t=1784070158",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTXpFM01uMTlmVjE5XHUwMDI2U2lnbmF0dXJlPVpRRVNZfk4zVTBxZktHcjVYcGlUVHB6T1F%2BaTBlTXByUnZISURtQWpnT2p4TU5TODVzSElWTnVxVUpvWVJudENvc1A1aVAtQzNHSHJOTUtPdUhyNVJzTDlKMVdwdTY4UE9GT013NnZXbFVJUHZ5R0RtV0NOY0QwdGgwakZvaXZUM351bzlvNmVkQkRta3BIYktIbTV1UEZFUWoxU2pDWmRKY0VQWUpoRm1RTn5%2BZWNBbjIyMEFyRU1jOE5tSlJ5Y2xBTHNTNUlyYWRJS1luOX5JZGNsdEV3MG1lbUNEckdIbm9%2BMDNkSUNNMWJTbGpFZTczWWJLYnFuazRoMi1SQjFSV1VGdG1lV09JYm5lODQ2dm1FR2ozcjJMMkhpTnAtcGhVUElpbzFEeGxjbE03WW9oZXlJYXJZRUhXcm5BUmRTV01rS0VBRVZmWTdSckZEYlZjWlVKZ19fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3MTUwMn0%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:25:02.142Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:35:12.393Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=25e4d2e1c7d771b1f07c857bc7871df3&t=1784068312",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTmpjM09IMTlmVjE5XHUwMDI2U2lnbmF0dXJlPUtmTUxxYnA2YzlsUEF2VTEzd3pFV21kOTNEMU9hRDlaNGVTVGxxaFU4bjdQVU1zSUdYN2xBQWk4NVlxdHdJRmFLYX52U1oxazQtRlhNb2VKRDBBNklsRkw5dktHUGhnaX5sNWZhQ3JRdUx3WmtFc0hEN3VGcERuMHJJdkNES2JsOFA0VEdFQXBubX5xSno3OVRvcH5UWFMteW5SYkZ0SWZJa3pOYXItcUx3UG1MNkdNbDVnVzBLczc4ZnFWbHc1S1Fud3BWNXhJM2VuVm4zQlh6TDNIT0tCLWRrY3pSS1BwTnJYc0pjUDRqNy1VcnZKaHFvMUs0dFZKeTg2eFhnWjVpdkhuYU9NVDJsOWhMRWdObHJ5aUt6SjkycmlIfkpKaDhEVTRYOTlNaS1NflN3RFVyTEJEWUlFRX5XQVdJc08wT2V0TjJFdEMwMHJYV1N%2BR0ViS0Vnd19fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3MjExM30%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:35:13.641Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:36:29.333Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "5248736070870728736",
+          "url": "",
+          "resolutions": "1080",
+          "size": "95270439",
+          "duration": 241,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:36:33.687Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=1681885165993295904&se=0&ep=0&detailPath=maan-karate-darling-dambakku-video-anirudh-sivakarthikeyan-YCkq7wd3f02",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/maan-karate-darling-dambakku-video-anirudh-sivakarthikeyan-YCkq7wd3f02?id=1681885165993295904&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:37:17.242Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "3697443716450380200",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/7dbd497b47266a65439cfc68775bdb5d.mp4?sign=1243326166287d1cef09b53b7a3d76e9&t=1784071950",
+          "resolutions": "480",
+          "size": "411577377",
+          "duration": 6533,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "5967926431714791744",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2124680559",
+          "duration": 6533,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "7717660648855196560",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMTczMjM3ODA1MDgyMzYxOTE0NF8wXzBfMTA4MF9oMjY1XzQwNS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9MekUzTXpJek56Z3dOVEE0TWpNMk1Ua3hORFJmTUY4d1h6RXdPREJmYURJMk5WODBNRFV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTmpBME1YMTlmVjE5XHUwMDI2U2lnbmF0dXJlPWxpUldXZDFnaFhtOGhDUnlMSHFDZEViclhCN3JRUWhTRHJiTmtDWkVFOUU2NjduR0RYSlJuYzdmTERLVTVhRHdSSUxmLVNuU3JaZG5TRTZnOGRMbTBUdzQxSVpWMERDNzM2NWhJNkVjSndvNFJBcVdBSHc0YW9hMEt1ZEZIcDJRRi1xQnRyOEc4SlplcHVnUmxxWDFLVDB2YmxYZVBoOXpvRXRoelg3bjdxVElSZGhzVXhDdDhpOFBOR35hOVFEdkRpRlRYRE5IQU5%2BemVVYnpubXA4Q3BNZlRkVHo1ZlZBc0JQV2c3WXdkM2VlRUlNZy1HTmpleDF1eDBtZk1LdDRlRTJ6REw2b2hwejNXLVVGVkpTM2tOLVBrMWU4OGhNakFxYndqdHlzSTNQcllCUEJyVElQRzFOVkg5ZHd5cHE2djRkWHp1aTB%2BOFpMcWRYSE5%2BdU9zUV9fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3MjIzOH0%3D",
+          "resolutions": "1080,720,480",
+          "size": "2912846918",
+          "duration": 6533,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:37:18.536Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=1732378050823619144&se=0&ep=0&detailPath=obsession-YCQTo4djY32",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/obsession-YCQTo4djY32?id=1732378050823619144&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 400,
+  "body": {
+    "code": 400,
+    "reason": "LIMIT_EXCEED",
+    "message": "Too many downloads. Try tomorrow.",
+    "metadata": {}
+  }
+}
+
+========== [2026-07-14T23:42:15.413Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=3285177489940694304&se=0&ep=0&detailPath=fast-x-SttcFY99GU3",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/fast-x-SttcFY99GU3?id=3285177489940694304&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "downloads": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=260b43e80530212383a79cafe9a63cf8&t=1784072376",
+          "resolution": 360,
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264"
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "https://bcdnxw.hakunaymatata.com/extto/502dd75dda9962b0dc59b641065c9a92.mp4?sign=bf69927554779c15abce84e11bd66543&t=1784070443",
+          "resolution": 1080,
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264"
+        }
+      ],
+      "captions": [
+        {
+          "id": "5666694390157296544",
+          "lan": "ar",
+          "lanName": "اَلْعَرَبِيَّةُ",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b37e8a07507231cc6176ee1013261639.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "132530",
+          "delay": 0
+        },
+        {
+          "id": "7740912222574445344",
+          "lan": "bn",
+          "lanName": "বাংলা",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d764acb4394163f94e8f35e54d824479.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "216663",
+          "delay": 0
+        },
+        {
+          "id": "3215301258789672032",
+          "lan": "en",
+          "lanName": "English",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/66d3c802c8e0d888bc9f00226039d49c.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131595",
+          "delay": 0
+        },
+        {
+          "id": "3528277641457452944",
+          "lan": "fil",
+          "lanName": "Filipino",
+          "url": "https://cacdn.hakunaymatata.com/msubt/8b71a95546338315c8642e60260c9d39.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "183256",
+          "delay": 0
+        },
+        {
+          "id": "5018176043816027704",
+          "lan": "fr",
+          "lanName": "Français",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/9fe8f1a65a580e5ed98e8aa30411ba86.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "135808",
+          "delay": 0
+        },
+        {
+          "id": "5389239018578134568",
+          "lan": "ha",
+          "lanName": "هَرْشٜن هَوْس",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/280054f796d647ca03562fe51564309d.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171418",
+          "delay": 0
+        },
+        {
+          "id": "6945533881395594352",
+          "lan": "in_id",
+          "lanName": "Indonesian",
+          "url": "https://cacdn.hakunaymatata.com/ai_translate/f78c495ae66a2d64a8a6df5eeeb46028.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9haV90cmFuc2xhdGUvKiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc4NDY3NTE3MH19fV19&Signature=SwawF4lciK2C5Pajdatwk1ADU62GHe003qBaVfoMXdls2uPJJMXgRh7YUMmThDNOxQ2palqjsNNCcIChntD25e77xSi1JWbex33W7goZbAUyEBQyVQw-TX0A8mdw-Ab2oL8QB4ZWtc9pL7mWH9VMfMYBvr8sAh12Ssp4Ois3LgQWH0~VyrG5Gpye~PxuQtcV2Ctb4ujsz04Ylh4gG5Rb8zqbNgq7MrH56HJo1KoOij9AHgD3E9y2V2ZfRNGFlk7yQq2yOt-M~ZVRGwfPYI7w1fW0g8mxq~oWML~asPXS8optXOfEJ-dBHUBAtOse3MxhxKezktHgAYs~2hTYUZx84w__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "129549",
+          "delay": 0
+        },
+        {
+          "id": "2836683592246482920",
+          "lan": "ms",
+          "lanName": "Malay",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bab0cc4977090fb12762e1f29a2e02f8.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "138880",
+          "delay": 0
+        },
+        {
+          "id": "3133857639181025576",
+          "lan": "pa",
+          "lanName": "ਪੰਜਾਬੀ",
+          "url": "https://cacdn.hakunaymatata.com/msubt/bf083f156efdb0937dcdea90499d5052.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "220435",
+          "delay": 0
+        },
+        {
+          "id": "6747558300726296944",
+          "lan": "pt",
+          "lanName": "Português",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/d991584fe4ff908da78f4de4a253bf6b.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "131119",
+          "delay": 0
+        },
+        {
+          "id": "1259256284520540440",
+          "lan": "ru",
+          "lanName": "Русский",
+          "url": "https://cacdn.hakunaymatata.com/msubt/4142c1402a0c106291beef4d98e5576a.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "162172",
+          "delay": 0
+        },
+        {
+          "id": "4671266721733429424",
+          "lan": "sw",
+          "lanName": "Kiswahili",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/b686d79d1c23def2301a2995adceebd4.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=tDhfVKDugmy~1EAUuoDnq5lF0y5xlz8k524XzVE-BqD~WC6D9yvTMqe4WQIMvg8mHrmGcpeE583zAaXpolDaATQuEGDjVdS9qmN2GPIIKDD66l3wkzk4LaL9QWMuCySZXQj1pcIfB8BVq-YpZyudDoFvi4uCKXg-7K4VQFQrtG75muaMG5TTvW7WIzqQnNsUSXhA-zp6a3PY6d5SNR3GGumLYS~TSFIkkNVSmSWPRAUIwyBgiH-KPTNbbqLWG8AmToh9nLe-AmVgBuBWvJzGN7JzJUkqyrS-C~5d0kdcYIUKaCiAc~0fy-JZ~qwgcgXkxjJoQlHpF6NRJcgoQWFQjw__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "171770",
+          "delay": 0
+        },
+        {
+          "id": "7663434242370011392",
+          "lan": "ur",
+          "lanName": "اُردُو",
+          "url": "https://cacdn.hakunaymatata.com/msubt/18bcc594976e2eb39d94892e7e76a180.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "175806",
+          "delay": 0
+        },
+        {
+          "id": "4049535827645530176",
+          "lan": "zh",
+          "lanName": "中文",
+          "url": "https://cacdn.hakunaymatata.com/msubt/d36ad807eec8b17548d33b679befed09.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc1MTYzfX19XX0_&Signature=l7HaL8Q2picTen6ItmjCDaegD8S6K4nyFtCgqKu4QFMDyu58FTi7H0i~-nLStfmKTY7LnbyivX682sUrbSPVcsnv1CfZ21kQKAxodNnGP~xGI1qpzVlg8LaQYEi~oRssfu9fyF4eJV48ck6mvDZoOwUfYfeu9xDI91W5Rroa8zBUKPV7aVCBG7fwb~jnTmY~2wVYGEOzur7T4ZJINJXRgX5gXh7kBuyYOOTu-SkOrFELVRFIYT5VRUqvv2EC7Q1xfnfxrPrm1cKuOhTao--eazvxxQc90Kk16iKsqwcLqBVnxYipnPIgCQnT2DEMhnDe29LuHDrZdPBjzwWgXB3VuQ__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "128807",
+          "delay": 0
+        }
+      ],
+      "limited": false,
+      "limitedCode": "",
+      "freeNum": 999,
+      "hasResource": true
+    }
+  }
+}
+
+========== [2026-07-14T23:42:15.428Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "7291152689286077896",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/5a9e88e6de3f745b780f140fb28699ab.mp4?sign=260b43e80530212383a79cafe9a63cf8&t=1784072376",
+          "resolutions": "360",
+          "size": "403890518",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "2314581333315573528",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2787829681",
+          "duration": 8450,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "6787235764268058648",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMzI4NTE3NzQ4OTk0MDY5NDMwNF8wXzBfMTA4MF9oMjY1XzMyMS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9Mek15T0RVeE56YzBPRGs1TkRBMk9UUXpNRFJmTUY4d1h6RXdPREJmYURJMk5WOHpNakV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTmpjNE5uMTlmVjE5XHUwMDI2U2lnbmF0dXJlPWxVeFpqeDJ1ckJqQmt2MjVxQWZkbWlLWEJGVWxlWDVWWnliUDc2MjVlRmtUcHRaNn5OR01USHd4NUVzaWN1cThvMTJxNUtFQ2ZNV25BQVlFd2gwclRKTzlSflRVN2FjRHV3MjNHNnhaR1U5NUdtfk5ianY0LUFYbmYwam1ZaWJKUndGcGMwRjBsSnFGNUNlMzVIM3k1Z0VMSTBaVUVxYVpJTml%2BbmpxRU0wVUxOR2VZaHJXSDdIOTQxaGJvLXdINDBERG85VkhYbjhDVlc1ZHB2UWxkZXZlckFuRFdINW43VU1uR2J1Q2ZoSmRGVEFCM1N%2BSGM4TkFiUFhWYXViaUZiTG5qRGtLUVN3YX5xT09WYU84bHR3SjVpYk95TXBRSmtqNGt1dkFKUklOZ3pIWUh4Q2NRUUdwMEhxVVBaNDZSUUdUUUtYQWFSeHN%2BeE9xYlFHcFpOd19fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3MjUzNn0%3D",
+          "resolutions": "1080,720,480",
+          "size": "4064793742",
+          "duration": 8450,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:48:04.801Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "3697443716450380200",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/7dbd497b47266a65439cfc68775bdb5d.mp4?sign=a3eda8a4a1428de1c4bf8f5c493fe5f9&t=1784072291",
+          "resolutions": "480",
+          "size": "411577377",
+          "duration": 6533,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": false
+        },
+        {
+          "format": "MP4",
+          "id": "5967926431714791744",
+          "url": "",
+          "resolutions": "1080",
+          "size": "2124680559",
+          "duration": 6533,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [
+        {
+          "format": "DASH",
+          "id": "7717660648855196560",
+          "url": "https://h5-api.aoneroom.com/playstream.mpd?q=eyJ1cmwiOiJodHRwczovL3NhY2RuLmhha3VuYXltYXRhdGEuY29tL2Rhc2gvMTczMjM3ODA1MDgyMzYxOTE0NF8wXzBfMTA4MF9oMjY1XzQwNS9pbmRleF93ZWIubXBkP1BvbGljeT1leUpUZEdGMFpXMWxiblFpT2x0N0lsSmxjMjkxY21ObElqb2lhSFIwY0hNNkx5OXpZV05rYmk1b1lXdDFibUY1YldGMFlYUmhMbU52YlM5a1lYTm9MekUzTXpJek56Z3dOVEE0TWpNMk1Ua3hORFJmTUY4d1h6RXdPREJmYURJMk5WODBNRFV2S2lJc0lrTnZibVJwZEdsdmJpSTZleUpFWVhSbFRHVnpjMVJvWVc0aU9uc2lRVmRUT2tWd2IyTm9WR2x0WlNJNk1UYzRORFkzTnpJek1YMTlmVjE5XHUwMDI2U2lnbmF0dXJlPUljMnA5N3JTOG9SUmtmazl4WjFTRlpvZ0tmZFZ5MGhReGpHS3E5dVlvMjlzfndJc3UtLTg0ZDYyR35Oc2Z4S2tGWUFhfjR3SFhPa3h3VXJGb0ZuekdIOFhlS3VLc0Fvc1BpYzRET1JDTXlpeEdmU1pCMVVnSFoyMmUzbEtwazhOSmRGdkw0WDN2fjQyN35JaXpWN3NndDUwVWtYODdhcmRzN1N3WWNQYklhSk1UM0xvbkgwZjl2cnBFNkd4b3g4Qn5MRHFmVWd6OUxMZ1RiVmZ6OUE5V2x5Qzd5OXoxMXdlZ0htTENxcGhYV21BeEQyRTc0dGZ1VUhESUZ6QjBDM1p%2BbGlvejljNzBEdUprdzd5Q1pLZE4yV0tNbTlIODhCd3ZmT01oYThGYlhQUWd%2BQTYtLU44Tmo1aUdPRGp%2Ba25hd0Y3bWV4VmkyVVlSRGZiMkNBQ34tUV9fXHUwMDI2S2V5LVBhaXItSWQ9S01ITjFMUTFIRVVQTCIsImZvcm1hdCI6IkRBU0giLCJjdCI6MTc4NDA3Mjg4NX0%3D",
+          "resolutions": "1080,720,480",
+          "size": "2912846918",
+          "duration": 6533,
+          "codecName": "hevc",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:48:06.418Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=1732378050823619144&se=0&ep=0&detailPath=obsession-YCQTo4djY32",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/obsession-YCQTo4djY32?id=1732378050823619144&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "downloads": [
+        {
+          "format": "MP4",
+          "id": "3697443716450380200",
+          "url": "https://bcdnxw.hakunaymatata.com/bt/7dbd497b47266a65439cfc68775bdb5d.mp4?sign=a3eda8a4a1428de1c4bf8f5c493fe5f9&t=1784072291",
+          "resolution": 480,
+          "size": "411577377",
+          "duration": 6533,
+          "codecName": "h264"
+        },
+        {
+          "format": "MP4",
+          "id": "5967926431714791744",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/4bac2990f1b743b8955ed4c67623c746.mp4?sign=5e4050045c109acbbc5679f8b4dacc31&t=1784068805",
+          "resolution": 1080,
+          "size": "2124680559",
+          "duration": 6533,
+          "codecName": "h264"
+        }
+      ],
+      "captions": [
+        {
+          "id": "8774029639380622680",
+          "lan": "ar",
+          "lanName": "اَلْعَرَبِيَّةُ",
+          "url": "https://cacdn.hakunaymatata.com/msubt/db4abce612bf99228da6c7021d29bf41.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "138461",
+          "delay": 0
+        },
+        {
+          "id": "287534902298430488",
+          "lan": "bn",
+          "lanName": "বাংলা",
+          "url": "https://cacdn.hakunaymatata.com/msubt/c7ecac2406898789ff90abc058de8640.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "192252",
+          "delay": 0
+        },
+        {
+          "id": "5677444255749496152",
+          "lan": "en",
+          "lanName": "English",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/5b6baa942786d0fed2e6bcd4c1bd1acc.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=LeHoYQZslXLa4ZtGkRqP0FscDm94XTgiOYLhvabvq9MvMknC7f8KEc0YcFvNTHPk7QWarnJ7v7Hlmx7VoaKH1iGmeFsTEBjCYiIu1Rd8MrfxRUzgiOk9-mR4x8ft9ptT6RIwsbIw2SOHTJWFrCgFnebSRJtNaI~QOveSolBjIwrZuD6mNS4h5aDMjbEFdz9NxvZPXnkLWIlGsS0ltiQ~yiPVrFtV-T9y0cJscDnciunLUpDUW0oiJsptJOEz6A2-~Nhd-rqOs5qDvyzNk8vvMk1nK6jMOP-mNFFzi3UGhoaNpYprnR0C~ki1SJDcIRRcJukha7BQotfIMgi00DJ8Zg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "116899",
+          "delay": 0
+        },
+        {
+          "id": "7758107283594562584",
+          "lan": "es",
+          "lanName": "Español",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/8ad86f2697f5407f840532554e436860.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=LeHoYQZslXLa4ZtGkRqP0FscDm94XTgiOYLhvabvq9MvMknC7f8KEc0YcFvNTHPk7QWarnJ7v7Hlmx7VoaKH1iGmeFsTEBjCYiIu1Rd8MrfxRUzgiOk9-mR4x8ft9ptT6RIwsbIw2SOHTJWFrCgFnebSRJtNaI~QOveSolBjIwrZuD6mNS4h5aDMjbEFdz9NxvZPXnkLWIlGsS0ltiQ~yiPVrFtV-T9y0cJscDnciunLUpDUW0oiJsptJOEz6A2-~Nhd-rqOs5qDvyzNk8vvMk1nK6jMOP-mNFFzi3UGhoaNpYprnR0C~ki1SJDcIRRcJukha7BQotfIMgi00DJ8Zg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "121677",
+          "delay": 0
+        },
+        {
+          "id": "4554374491836666768",
+          "lan": "fil",
+          "lanName": "Filipino",
+          "url": "https://cacdn.hakunaymatata.com/msubt/38a8756cfe1136fef46d0a71ad108a27.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "116150",
+          "delay": 0
+        },
+        {
+          "id": "8828415882536839552",
+          "lan": "fr",
+          "lanName": "Français",
+          "url": "https://cacdn.hakunaymatata.com/subtitle/374cc18334ad2c741f2dfd007707f18f.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9zdWJ0aXRsZS8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=LeHoYQZslXLa4ZtGkRqP0FscDm94XTgiOYLhvabvq9MvMknC7f8KEc0YcFvNTHPk7QWarnJ7v7Hlmx7VoaKH1iGmeFsTEBjCYiIu1Rd8MrfxRUzgiOk9-mR4x8ft9ptT6RIwsbIw2SOHTJWFrCgFnebSRJtNaI~QOveSolBjIwrZuD6mNS4h5aDMjbEFdz9NxvZPXnkLWIlGsS0ltiQ~yiPVrFtV-T9y0cJscDnciunLUpDUW0oiJsptJOEz6A2-~Nhd-rqOs5qDvyzNk8vvMk1nK6jMOP-mNFFzi3UGhoaNpYprnR0C~ki1SJDcIRRcJukha7BQotfIMgi00DJ8Zg__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "3765",
+          "delay": 0
+        },
+        {
+          "id": "6516712184289313080",
+          "lan": "hi",
+          "lanName": "हिन्दी",
+          "url": "https://cacdn.hakunaymatata.com/msubt/9c6ef2847524c70366e75ec80c96cdc0.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "192281",
+          "delay": 0
+        },
+        {
+          "id": "2372151773957089664",
+          "lan": "in_id",
+          "lanName": "Indonesian",
+          "url": "https://cacdn.hakunaymatata.com/msubt/565f8170c8180774587815d282c8e02e.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "115947",
+          "delay": 0
+        },
+        {
+          "id": "3571142815767744832",
+          "lan": "ms",
+          "lanName": "Malay",
+          "url": "https://cacdn.hakunaymatata.com/msubt/e428487f5de461894c09ed13d6be009f.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "120024",
+          "delay": 0
+        },
+        {
+          "id": "777973902113920400",
+          "lan": "pt",
+          "lanName": "Português",
+          "url": "https://cacdn.hakunaymatata.com/msubt/c290ce60953586ed3f24d42e71175d39.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "113165",
+          "delay": 0
+        },
+        {
+          "id": "2308865791627789616",
+          "lan": "ur",
+          "lanName": "اُردُو",
+          "url": "https://cacdn.hakunaymatata.com/msubt/a7965ff6121b7aff95714eedbe1b27bf.srt?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jYWNkbi5oYWt1bmF5bWF0YXRhLmNvbS9tc3VidC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzg0Njc3NTQ0fX19XX0_&Signature=P1uCdZpX-3nVVXa3giTRMGb-chHfaHs-n45do1NKBH9t9KPX1PWj-vqmZ6lcosZfkLoTHm5HrxzssWETeLSoE~VNq2rtfA7alxcncGvJvFKbWKsb3k372txKltEV-Fj030MLh41lL7RnBCxzvuvfe8yfug7vd~gTZ1sqBfAwm64mT73XS7uuz2FxJF3~ib8lkiNSL7ZsFBCt7xnpAAg6rDPqSBbmR-QXdFGOI0DrJ5I7I0qYPRWYIASGmo8XSeqGrBItO8eGRlh1Jb8D8zBaBOV6i0D7Xi1wQmR01OtyE~huM2uHvg~QgxwU0QKaHj7yazhV6YyMxqBlZO23SD6H-g__&Key-Pair-Id=KMHN1LQ1HEUPL",
+          "size": "153286",
+          "delay": 0
+        }
+      ],
+      "limited": false,
+      "limitedCode": "",
+      "freeNum": 999,
+      "hasResource": true
+    }
+  }
+}
+
+========== [2026-07-14T23:48:46.683Z] getDownloadData play - subject/download ==========
+{
+  "domain": "https://moviebox.ph",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "streams": [
+        {
+          "format": "MP4",
+          "id": "5248736070870728736",
+          "url": "",
+          "resolutions": "1080",
+          "size": "95270439",
+          "duration": 241,
+          "codecName": "h264",
+          "signCookie": "",
+          "signHeaderKey": "",
+          "vipLocked": true
+        }
+      ],
+      "freeNum": 999,
+      "limited": false,
+      "limitedCode": "",
+      "dash": [],
+      "hls": [],
+      "hasResource": true,
+      "vipLocked": true
+    }
+  }
+}
+
+========== [2026-07-14T23:48:47.807Z] getDownloadData download - subject/download ==========
+{
+  "url": "https://netfilm.world/wefeed-h5api-bff/subject/download?subjectId=1681885165993295904&se=0&ep=0&detailPath=maan-karate-darling-dambakku-video-anirudh-sivakarthikeyan-YCkq7wd3f02",
+  "referer": "https://netfilm.world/spa/videoPlayPage/movies/maan-karate-darling-dambakku-video-anirudh-sivakarthikeyan-YCkq7wd3f02?id=1681885165993295904&detailSe=&detailEp=&lang=en&type=%2Fmovie%2Fdetail",
+  "status": 200,
+  "body": {
+    "code": 0,
+    "message": "ok",
+    "data": {
+      "downloads": [
+        {
+          "format": "MP4",
+          "id": "5248736070870728736",
+          "url": "https://bcdnxw.hakunaymatata.com/resource/ec69b3d87dd4cd5295ee6a0df12917d2.mp4?sign=02fe8d48d003bf62f1ec36d0585eafa9&t=1784072190",
+          "resolution": 1080,
+          "size": "95270439",
+          "duration": 241,
+          "codecName": "h264"
+        }
+      ],
+      "captions": [],
+      "limited": false,
+      "limitedCode": "",
+      "freeNum": 999,
+      "hasResource": true
+    }
+  }
+}
