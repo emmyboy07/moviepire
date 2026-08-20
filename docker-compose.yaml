@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bun-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_bun_service
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - HOST=0.0.0.0

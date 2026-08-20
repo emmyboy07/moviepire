@@ -1,0 +1,30 @@
+FROM oven/bun:1.3
+
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY . .
+RUN bun install
+RUN bun run build
+
+ENV PORT=3000
+ENV HOST=0.0.0.0
+# Segment cache limits (overridable per-container without a rebuild).
+# 64 MB cache ceiling + 8 MB max per in-flight segment buffer.
+ENV SEGMENT_CACHE_MAX_BYTES=67108864
+ENV SEGMENT_MAX_BUFFER_BYTES=8388608
+
+EXPOSE 3000
+
+# Lets Coolify (and Docker itself) know the process is healthy without
+# needing any dashboard config. The /health endpoint answers instantly
+# and reports live RSS / cache stats so you can watch memory over time.
+HEALTHCHECK --interval=15s --timeout=5s --start-period=20s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
+
+# --smol enables JavaScriptCore's SmallHeap mode — Bun's equivalent of
+# Node's --max-old-space-size. It tells JSC to run GC more aggressively
+# and keep heap footprint small, so the kernel's cgroup OOM-killer never
+# gets a chance to fire. Without this flag Bun lets the heap grow freely
+# until the container memory limit is hit and the process is SIGKILL'd.
+CMD ["bun", "--smol", ".output/server/index.mjs"]

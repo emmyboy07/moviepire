@@ -1,0 +1,9 @@
+# Nixpacks configuration to force Node/NPM build instead of Bun to prevent memory/segfault crashes
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+# --max-old-space-size caps the V8 heap so Node GC runs before the kernel's
+# cgroup OOM-killer fires. Set this to ~60-70% of your container's memory
+# limit (e.g. 384 for a 512 MB container, 896 for a 1.5 GB container).
+cmd = "node --max-old-space-size=384 .output/server/index.mjs"
