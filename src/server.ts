@@ -332,13 +332,13 @@ async function enforceRange(response: Response, rangeHeader: string | null): Pro
 // fetch() straight out of the container.
 async function handleProxyRequest(request: Request): Promise<Response | null> {
   const url = new URL(request.url);
-  // Behind the reverse proxy, request.url (and thus url.origin) reports the
-  // internal plain-HTTP scheme even though the public site is HTTPS-only -
-  // building rewritten manifest URLs from url.origin directly produces
-  // http:// links that browsers silently block as mixed content on the
-  // https:// page, breaking every rendition/segment the manifest points to.
-  const isPublicHttps = request.headers.get("x-forwarded-proto") === "https" || url.protocol === "https:";
-  const publicOrigin = `${isPublicHttps ? "https" : "http"}://${url.host}`;
+  // Behind the reverse proxy, request.url can contain the internal scheme and
+  // host. Rewritten manifest URLs must point back to the public origin or the
+  // browser will reject the rendition and segment requests.
+  const forwardedProto = request.headers.get("x-forwarded-proto")?.split(",", 1)[0]?.trim();
+  const forwardedHost = request.headers.get("x-forwarded-host")?.split(",", 1)[0]?.trim();
+  const isPublicHttps = forwardedProto === "https" || url.protocol === "https:";
+  const publicOrigin = `${isPublicHttps ? "https" : "http"}://${forwardedHost || url.host}`;
 
   if (!url.pathname.startsWith("/api/proxy") && url.pathname !== "/api/hls-proxy") {
     return null;
