@@ -72,11 +72,12 @@ export async function extractVixSrcStream({
 
     if (!apiResponse.ok) return null;
 
-    let apiData = (await apiResponse.json()) as { src?: string };
-    let embedPath = apiData.src?.trim().replace(/^\//, "");
-    if (!embedPath) return null;
+    const apiData = (await apiResponse.json()) as { src?: string };
+    const rawEmbedUrl = apiData.src?.trim();
+    if (!rawEmbedUrl) return null;
 
-    let playerUrl = `${MAIN_URL}/${embedPath}`;
+    const embedUrl = new URL(rawEmbedUrl, `${MAIN_URL}/`);
+    let playerUrl = embedUrl.toString();
     let playerResponse = await vixFetch(playerUrl, {
       Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
       "X-Requested-With": "XMLHttpRequest",
@@ -87,9 +88,9 @@ export async function extractVixSrcStream({
         Accept: "application/json, text/plain, */*",
       });
       const retryData = (await retryApiResponse.json()) as { src?: string };
-      const retryPath = retryData.src?.trim().replace(/^\//, "");
-      if (retryPath) {
-        playerUrl = `${MAIN_URL}/${retryPath}`;
+      const retrySrc = retryData.src?.trim();
+      if (retrySrc) {
+        playerUrl = new URL(retrySrc, `${MAIN_URL}/`).toString();
         playerResponse = await vixFetch(playerUrl, { Accept: "text/html,*/*" });
       }
     }
@@ -98,12 +99,16 @@ export async function extractVixSrcStream({
 
     const html = await playerResponse.text();
 
-    const videoId = extractRegex(html, `window\\.video\\s*=\\s*\\{[^}]*id:\\s*['"]([^'"]+)['"]`);
-    const token = extractRegex(
+    // The API now includes these values in the embed URL query string. Read
+    // them from there first, then fall back to the inline player config for
+    // older Alpha responses.
+    const videoIdFromUrl = embedUrl.pathname.match(/\/embed\/([^/]+)/)?.[1] ?? null;
+    const videoId = videoIdFromUrl ?? extractRegex(html, `window\\.video\\s*=\\s*\\{[^}]*id:\\s*['"]([^'"]+)['"]`);
+    const token = embedUrl.searchParams.get("token") ?? extractRegex(
       html,
       `window\\.masterPlaylist[^}]*(?:['"]token['"]|\\btoken\\b)\\s*:\\s*['"]([^'"]+)['"]`,
     );
-    const expires = extractRegex(
+    const expires = embedUrl.searchParams.get("expires") ?? extractRegex(
       html,
       `window\\.masterPlaylist[^}]*(?:['"]expires['"]|\\bexpires\\b)\\s*:\\s*['"]([^'"]+)['"]`,
     );
