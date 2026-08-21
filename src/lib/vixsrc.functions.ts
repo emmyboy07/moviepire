@@ -19,9 +19,14 @@ export const loadVixSrcMovie = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => vixSrcMovieSchema.parse(d))
   .handler(async ({ data }) => {
     const { extractVixSrcStream } = await import("./vixsrc.server");
-    const r = await extractVixSrcStream({ type: "movie", id: data.tmdbId, language: data.language });
-    if (!r) return { ok: false as const, error: "Not found on Alpha" };
-    return { ok: true as const, data: r };
+    try {
+      const r = await extractVixSrcStream({ type: "movie", id: data.tmdbId, language: data.language });
+      return { ok: true as const, data: r };
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error("[VixSrc movie]", msg);
+      return { ok: false as const, error: msg };
+    }
   });
 
 export const loadVixSrcTv = createServerFn({ method: "POST" })
@@ -29,13 +34,18 @@ export const loadVixSrcTv = createServerFn({ method: "POST" })
   .inputValidator((d: unknown) => vixSrcTvSchema.parse(d))
   .handler(async ({ data }) => {
     const { extractVixSrcStream } = await import("./vixsrc.server");
-    const r = await extractVixSrcStream({
-      type: "tv",
-      id: data.tmdbId,
-      season: data.season,
-      episode: data.episode,
-      language: data.language,
-    });
-    if (!r) return { ok: false as const, error: "Not found on Alpha" };
-    return { ok: true as const, data: r };
+    try {
+      const r = await extractVixSrcStream({
+        type: "tv",
+        id: data.tmdbId,
+        season: data.season,
+        episode: data.episode,
+        language: data.language,
+      });
+      return { ok: true as const, data: r };
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.error("[VixSrc tv]", msg);
+      return { ok: false as const, error: msg };
+    }
   });
